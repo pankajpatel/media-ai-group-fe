@@ -12,12 +12,15 @@ import {
   MatToolbarModule,
   MatSidenavModule,
   MatCardModule,
-  MatButtonModule
+  MatButtonModule,
+  MatListModule,
+  MatProgressBarModule,
 } from '@angular/material';
 import ChartComponent from './chart/chart.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VideoStatsComponent } from './video-stats/video-stats.component';
 import { Page404Component } from './page404/page404.component';
+import { CircleProgressComponent } from './circle-progress/circle-progress.component';
 
 const appRoutes: Routes = [
 
@@ -42,7 +45,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     VideoStatsComponent,
     AppComponent,
-    ChartComponent
+    ChartComponent,
+    CircleProgressComponent
   ],
   imports: [
     NoopAnimationsModule,
@@ -50,7 +54,9 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
+    MatListModule,
     MatSidenavModule,
+    MatProgressBarModule,
     ChartsModule,
     BrowserModule,
     RouterModule.forRoot(

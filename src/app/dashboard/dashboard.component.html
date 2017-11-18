@@ -1,3 +1,97 @@
-<div class="dashboard">
-  <h1>Dashboard</h1>
+<mat-toolbar class="dashboard route-heading">
+  <h2>Dashboard</h2>
+</mat-toolbar>
+<div class="route-content">
+  <div class="cards row clearfix">
+    <div class="one-third card">
+      <div class="image">
+        <circle-progress value="30" suffix="%"></circle-progress>
+      </div>
+      <div class="context">
+        <div class="count">30</div>
+        <div class="text"><div>
+          Hellow
+        </div><div>
+          World
+        </div></div>
+      </div>
+    </div>
+    <div class="one-third card">
+      <div class="image">
+        <circle-progress value="30" suffix="%"></circle-progress>
+      </div>
+      <div class="context">
+        <div class="count">30</div>
+        <div class="text"><div>
+          Hellow
+        </div><div>
+          World
+        </div></div>
+      </div>
+    </div>
+    <div class="one-third card">
+      <div class="image">
+        <circle-progress value="30" suffix="%"></circle-progress>
+      </div>
+      <div class="context">
+        <div class="count">30</div>
+        <div class="text"><div>
+          Hellow
+        </div><div>
+          World
+        </div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cards row clearfix">
+    <div class="two-third card">
+      <p class="center">Live engagement preview</p>
+      <p class="center link">Average time of update: every 1 sec</p>
+      <app-chart color="green" name="happiness" [labels]="labels" [data]="charts1Data"></app-chart>
+    </div>
+    <div class="one-third card dark">
+      <p class="center">One</p>
+      <p class="center link">Two</p>
+      <div class="emotion">
+        <p>Sad
+          <span class="float-right">40%</span>
+        </p>
+        <div class="progress">
+          <div class="fill" style="width:40%;background: rgb(26, 92, 153)"></div>
+        </div>
+      </div>
+      <div class="emotion">
+        <p>Happy
+          <span class="float-right">60%</span>
+        </p>
+        <div class="progress">
+          <div class="fill" style="width:60%;background: rgb(16, 211, 104)"></div>
+        </div>
+      </div>
+      <div class="emotion">
+        <p>Sad
+          <span class="float-right">40%</span>
+        </p>
+        <div class="progress">
+          <div class="fill" style="width:40%;background: rgb(26, 92, 153)"></div>
+        </div>
+      </div>
+      <div class="emotion">
+        <p>Sad
+          <span class="float-right">40%</span>
+        </p>
+        <div class="progress">
+          <div class="fill" style="width:40%;background: rgb(26, 92, 153)"></div>
+        </div>
+      </div>
+      <div class="emotion">
+        <p>Sad
+          <span class="float-right">40%</span>
+        </p>
+        <div class="progress">
+          <div class="fill" style="width:40%;background: rgb(26, 92, 153)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
