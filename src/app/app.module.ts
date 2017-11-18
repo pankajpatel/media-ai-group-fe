@@ -8,6 +8,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
+import { WindowAffdex } from './service/window.affdex.service';
+
 import {
   MatToolbarModule,
   MatSidenavModule,
@@ -26,6 +28,7 @@ import { UsersComponent } from './users/users.component';
 import { CalendarModule } from 'angular-calendar';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DonughtCardComponent } from './donught-card/donught-card.component';
+import { TrackComponent } from './track/track.component';
 
 const appRoutes: Routes = [
 
@@ -54,7 +57,8 @@ const appRoutes: Routes = [
     CircleProgressComponent,
     UsersComponent,
     CalendarComponent,
-    DonughtCardComponent
+    DonughtCardComponent,
+    TrackComponent
   ],
   imports: [
     NoopAnimationsModule,
@@ -74,7 +78,11 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [HttpRequestService, ChartDataParsingService],
+  providers: [
+    HttpRequestService,
+    ChartDataParsingService,
+    WindowAffdex
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
