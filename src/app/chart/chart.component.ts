@@ -1,12 +1,11 @@
 import color from 'color';
 import { Component, Input, OnInit } from '@angular/core';
-import { ChartsModule } from 'ng2-charts';
 
 @Component({
-  selector: 'chart',
+  selector: 'app-chart',
   templateUrl: './chart.component.html'
 })
-export default class Chart implements OnInit{
+export default class ChartComponent implements OnInit {
   @Input() name: string;
   @Input() color: string;
   @Input() data: Array<Number>;
@@ -22,7 +21,7 @@ export default class Chart implements OnInit{
     console.log(e, this);
   }
   ngOnInit() {
-    console.log(this.color)
+    console.log(this.color);
     this.lineChartDatasets = [{
       label: this.name,
       fill: false,

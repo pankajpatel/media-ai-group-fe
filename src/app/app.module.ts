@@ -13,7 +13,7 @@ import {
   MatCardModule,
   MatButtonModule
 } from '@angular/material';
-import Chart from './chart/chart.component';
+import ChartComponent from './chart/chart.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VideoStatsComponent } from './video-stats/video-stats.component';
 import { Page404Component } from './page404/page404.component';
@@ -41,7 +41,7 @@ const appRoutes: Routes = [
     DashboardComponent,
     VideoStatsComponent,
     AppComponent,
-    Chart
+    ChartComponent
   ],
   imports: [
     NoopAnimationsModule,

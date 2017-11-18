@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class HttpRequestService {
-  private DOMAIN = 'https://jsonplaceholder.typicode.com';
+  private DOMAIN = 'http://cphsw-env.7rimk8au7d.us-east-1.elasticbeanstalk.com';
   constructor(private http: HttpClient) { }
 
   getRequest(path: string) {
