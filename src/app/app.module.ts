@@ -13,17 +13,17 @@ import {
   MatCardModule,
   MatButtonModule
 } from '@angular/material';
-import Page404 from './404';
-import VideoStats from './videoStats';
-import Dashboard from './dashboard';
 import Chart from './chart/chart.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { VideoStatsComponent } from './video-stats/video-stats.component';
+import { Page404Component } from './page404/page404.component';
 
 const appRoutes: Routes = [
 
-  { path: 'dashboard', component: Dashboard },
+  { path: 'dashboard', component: DashboardComponent },
   {
     path: 'stats',
-    component: VideoStats,
+    component: VideoStatsComponent,
     data: { title: 'Heroes List' }
   },
   {
@@ -31,17 +31,17 @@ const appRoutes: Routes = [
     redirectTo: '/heroes',
     pathMatch: 'full'
   },
-  { path: '**', component: Page404 }
+  { path: '**', component: Page404Component }
 ];
 
 
 @NgModule({
   declarations: [
-    Page404,
-    Dashboard,
-    VideoStats,
+    Page404Component,
+    DashboardComponent,
+    VideoStatsComponent,
     AppComponent,
-    Chart,
+    Chart
   ],
   imports: [
     NoopAnimationsModule,
