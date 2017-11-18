@@ -1,0 +1,37 @@
+// import our custom theme
+@import './my-theme.scss';
+
+// specify theme class eg: <body class="my-theme"> ... </body>
+.my-theme {
+  
+  // use our theme with angular-material-theme mixin
+  @include angular-material-theme($my-theme);
+}
+
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+
+
+.example-card {
+  width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
