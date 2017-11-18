@@ -7,17 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-
-  public charts0Data: Array<Number>;
-  public charts1Data: Array<Number>;
-  public labels: Array<String>;
+  public charts1Data: any;
+  public graphData: any;
   constructor(private httpRequestService: HttpRequestService) {
-    httpRequestService.getRequest('api/videos/1/emotions/stats')
-    // console.log(data);
 
-    this.labels = ['0', '10', '20', '30', '40', '50', '60'];
-    this.charts0Data = [65, 59, 80, 51, 56, 55, 40];
-    this.charts1Data = [25, 51, 30, 81, 56, 25, 40];
+    // console.log(data);
+    this.graphData = {
+      labels: [0, 20, 40, 60, 80, 100, 120, 140, 160, 180]
+    };
+    this.charts1Data = [{
+      label: 'Happiness',
+      data: [25, 51, 30, 81, 56, 25, 40, 50, 89, 10],
+      fill: false,
+    }]
   }
 
 }

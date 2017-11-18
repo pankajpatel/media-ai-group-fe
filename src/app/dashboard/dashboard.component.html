@@ -47,7 +47,7 @@
     <div class="two-third card">
       <p class="center">Live engagement preview</p>
       <p class="center link">Average time of update: every 1 sec</p>
-      <app-chart color="green" name="happiness" [labels]="labels" [data]="charts1Data"></app-chart>
+      <app-chart [lineChartDatasets]="charts1Data" graphData="labels"></app-chart>
     </div>
     <div class="one-third card dark">
       <p class="center">One</p>
