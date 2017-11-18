@@ -1,3 +1,4 @@
+import { HttpRequestService } from './service/http-request.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  constructor(private httpRequestService: HttpRequestService ) {
+    httpRequestService.getRequest('comments');
+  }
 }
