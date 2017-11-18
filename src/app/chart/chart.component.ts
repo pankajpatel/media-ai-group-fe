@@ -13,6 +13,7 @@ export default class ChartComponent implements OnInit {
 
   public lineChartColors: Array<any>;
   public lineChartDatasets: Array<Object>;
+  public lineChartOptions: any;
   public chartClicked(e: any): void {
     console.log(e, this);
   }
@@ -30,5 +31,14 @@ export default class ChartComponent implements OnInit {
     this.lineChartColors = [{
       borderColor: color(this.color).toString(),
     }];
+    this.lineChartOptions = {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      };
   }
 }
