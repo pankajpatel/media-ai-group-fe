@@ -1,3 +1,4 @@
+import { ChartDataParsingService } from './service/chart-data-parsing.service';
 import { HttpRequestService } from './service/http-request.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -57,7 +58,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [HttpRequestService],
+  providers: [HttpRequestService, ChartDataParsingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

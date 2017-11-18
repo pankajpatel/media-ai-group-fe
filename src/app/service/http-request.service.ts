@@ -6,10 +6,8 @@ export class HttpRequestService {
   private DOMAIN = 'http://cphsw-env.7rimk8au7d.us-east-1.elasticbeanstalk.com';
   constructor(private http: HttpClient) { }
 
-  getRequest(path: string) {
-    this.http.get<any>(`${this.DOMAIN}/${path}`).subscribe(data => {
-      console.log(data);
-    });
+  getEmotions(path: string) {
+    return this.http.get<any>(`${this.DOMAIN}/${path}`);
   }
 
 }

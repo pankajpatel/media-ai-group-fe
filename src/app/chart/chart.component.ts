@@ -1,19 +1,16 @@
-import color from 'color';
-import { Component, Input, OnInit } from '@angular/core';
+import { ChartData, GraphData } from './../models/chart-data';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html'
 })
-export default class ChartComponent implements OnInit {
-  @Input() name: string;
-  @Input() color: string;
-  @Input() data: Array<Number>;
-  @Input() labels: Array<String>;
+export default class ChartComponent {
+  @Input() lineChartDatasets: Array<ChartData>;
+  @Input() lineChartColors: Array<Array<string>>;
+  @Input() lineChartOptions: Array<string>;
+  @Input() graphData: GraphData;
 
-  public lineChartColors: Array<any>;
-  public lineChartDatasets: Array<Object>;
-  public lineChartOptions: any;
   public chartClicked(e: any): void {
     console.log(e, this);
   }
@@ -21,24 +18,5 @@ export default class ChartComponent implements OnInit {
   public chartHovered(e: any): void {
     console.log(e, this);
   }
-  ngOnInit() {
-    console.log(this.color);
-    this.lineChartDatasets = [{
-      label: this.name,
-      fill: false,
-      data: this.data,
-    }];
-    this.lineChartColors = [{
-      borderColor: color(this.color).toString(),
-    }];
-    this.lineChartOptions = {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
-      };
-  }
+
 }
