@@ -1,3 +1,4 @@
+import { HttpRequestService } from './service/http-request.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ChartsModule } from 'ng2-charts';
@@ -5,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
 import {
   MatToolbarModule,
   MatSidenavModule,
@@ -43,6 +45,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     NoopAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
@@ -54,7 +57,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [HttpRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
