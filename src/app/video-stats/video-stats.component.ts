@@ -48,7 +48,7 @@ export class VideoStatsComponent implements OnInit, OnDestroy {
     });
 
     // get our data every subsequent 10 seconds
-    IntervalObservable.create(10000)
+    IntervalObservable.create(1000)
     .takeWhile(() => this.alive) // only fires when component is alive
     .subscribe(() => {
       this.httpRequestService.getEmotions('api/videos/1/emotions').subscribe(data => {
