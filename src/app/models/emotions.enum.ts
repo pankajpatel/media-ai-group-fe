@@ -1,12 +1,12 @@
 export enum Emotions {
-  disgust,
-  anger,
-  contempt,
+  // disgust,
+  // anger,
+  // contempt,
   engagement,
-  fear,
-  joy,
-  sadness,
-  surprise,
-  valence,
+  // fear,
+  // joy,
+  // sadness,
+  // surprise,
+  // valence,
   attention
 }

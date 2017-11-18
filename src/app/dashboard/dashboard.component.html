@@ -47,7 +47,16 @@
     <div class="two-third card">
       <p class="center">Live engagement preview</p>
       <p class="center link">Average time of update: every 1 sec</p>
-      <app-chart [lineChartDatasets]="charts1Data" graphData="labels"></app-chart>
+      
+      <app-chart
+        [lineChartDatasets]="lineChartDatasets"
+        [lineChartColors]="lineChartColors"
+        [lineChartOptions]="lineChartOptions"
+        [graphData]="graphData">
+      </app-chart>
+
+
+
     </div>
     <div class="one-third card dark">
       <p class="center">One</p>

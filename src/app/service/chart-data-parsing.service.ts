@@ -29,7 +29,7 @@ export class ChartDataParsingService {
       label: 'engagement',
       fill: false,
       data: [],
-      borderColor: <string> color('pink').toString()
+      borderColor: <string> color('green').toString()
     },
     fear: {
       label: 'fear',
@@ -65,7 +65,7 @@ export class ChartDataParsingService {
       label: 'attention',
       fill: false,
       data: [],
-      borderColor: <string> color('red').toString()
+      borderColor: <string> color('blue').toString()
     },
   };
   getDefault() {
