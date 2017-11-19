@@ -7,12 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DonughtCardComponent implements OnInit {
   @Input() value: number;
+  @Input() from: number;
   @Input() text: any;
   @Input() secondary: string;
   constructor() { }
 
   ngOnInit() {
     this.secondary = this.secondary || '';
+    this.from = this.from || 100;
     this.text = this.text.split('|');
   }
 

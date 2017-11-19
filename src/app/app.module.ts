@@ -15,6 +15,7 @@ import {
   MatButtonModule,
   MatListModule,
   MatProgressBarModule,
+  MatIconModule
 } from '@angular/material';
 import ChartComponent from './chart/chart.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -64,6 +65,7 @@ const appRoutes: Routes = [
     MatListModule,
     MatSidenavModule,
     MatProgressBarModule,
+    MatIconModule,
     ChartsModule,
     BrowserModule,
     CalendarModule.forRoot(),

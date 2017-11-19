@@ -1,5 +1,5 @@
 import { HttpRequestService } from './../service/http-request.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IntervalObservable } from 'rxjs/observable/IntervalObservable';
 
 @Component({
@@ -8,26 +8,17 @@ import { IntervalObservable } from 'rxjs/observable/IntervalObservable';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-  public users: any;
+  @Input() count: number;
+  public users: Array<any>;
   private alive: boolean;
   constructor(private httpRequestService: HttpRequestService) {
     this.alive = true;
-    this.httpRequestService.getEmotions('api/videos/1/users')
-      .first() // only gets fired once
-      .subscribe(data => {
-        this.users = new Array(Number(data.users_watching));
-      })
-    IntervalObservable.create(1000)
-      .takeWhile(() => this.alive) // only fires when component is alive
-      .subscribe(() => {
-        this.httpRequestService.getEmotions('api/videos/1/users')
-          .subscribe(data => {
-            this.users = new Array(Number(data.users_watching));
-          })
-      });
+    this.count = 0;
+    this.users = [];
   }
 
   ngOnInit() {
+    this.users = new Array(Number(this.count));
   }
 
 }
