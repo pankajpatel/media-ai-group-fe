@@ -108,6 +108,7 @@ body * {
 }
 
 .card {
+    overflow: hidden;
     .image {
         width: 50px;
         height: 50px;
@@ -155,12 +156,14 @@ body * {
 .float-left {
     float: left;
 }
+
 .emotion {
-  padding: 8px 0 10px 0;
-   p {
-  margin: 10px 0;
+    padding: 8px 0 10px 0;
+    p {
+        margin: 10px 0;
+    }
 }
-}
+
 .progress {
     height: 10px;
     background: #eee;
@@ -174,7 +177,38 @@ body * {
         position: absolute;
         top: 0;
         left: 0;
-        background: #aaa;;
+        background: #aaa;
+        ;
         width: 15%;
     }
+}
+
+users {
+    display: block;
+    &.card {
+        padding: 0;
+    }
+    table {
+        width: 100%;
+        td,
+        th {
+            padding: 15px;
+        }
+        th {
+            text-align: left; // border-bottom: 1px solid #ccc;
+        }
+        thead {
+            box-shadow: 0 3px 8px 0 rgba(200, 200, 200, 0.6);
+        }
+    }
+}
+
+.green {
+    color: #bfcb3d;
+}
+.blue {
+    color: #5caee1;
+}
+.grey {
+    color: #ccc;
 }

@@ -21,6 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { VideoStatsComponent } from './video-stats/video-stats.component';
 import { Page404Component } from './page404/page404.component';
 import { CircleProgressComponent } from './circle-progress/circle-progress.component';
+import { UsersComponent } from './users/users.component';
 
 const appRoutes: Routes = [
 
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
     VideoStatsComponent,
     AppComponent,
     ChartComponent,
-    CircleProgressComponent
+    CircleProgressComponent,
+    UsersComponent
   ],
   imports: [
     NoopAnimationsModule,
