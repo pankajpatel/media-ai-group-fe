@@ -22,6 +22,8 @@ import { VideoStatsComponent } from './video-stats/video-stats.component';
 import { Page404Component } from './page404/page404.component';
 import { CircleProgressComponent } from './circle-progress/circle-progress.component';
 import { UsersComponent } from './users/users.component';
+import { CalendarModule } from 'angular-calendar';
+import { CalendarComponent } from './calendar/calendar.component';
 
 const appRoutes: Routes = [
 
@@ -48,7 +50,8 @@ const appRoutes: Routes = [
     AppComponent,
     ChartComponent,
     CircleProgressComponent,
-    UsersComponent
+    UsersComponent,
+    CalendarComponent
   ],
   imports: [
     NoopAnimationsModule,
@@ -61,6 +64,7 @@ const appRoutes: Routes = [
     MatProgressBarModule,
     ChartsModule,
     BrowserModule,
+    CalendarModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

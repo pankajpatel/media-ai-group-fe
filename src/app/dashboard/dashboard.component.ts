@@ -30,11 +30,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   stats(): Array<string> {
     return [
-      'disgust',
-      'anger',
-      'fear',
+      'engagement',
+      'attention',
       'joy',
-      'sadness'
+      'surprise',
+      'anger'
     ];
   }
 

@@ -59,12 +59,13 @@
 
     </div>
     <div class="one-third card dark">
-      <p class="center">One</p>
-      <p class="center link">Two</p>
+      <p class="center">User emotion tracking</p>
+      <p class="center">most represented emotions</p>
+      <p class="center link">Live preview for user emotions</p>
 
       <div class="emotion" *ngFor="let emotionStat of emotionsStats; let i = index">
         <p>{{emotionStat.label}}
-          <span class="float-right">{{emotionStat.percentage}}</span>
+          <span class="float-right">{{emotionStat.percentage}}%</span>
         </p>
         <div class="progress">
           <div class="fill" [ngStyle]="{background: emotionStat.borderColor, width: emotionStat.percentage + '%'}"></div>
@@ -74,5 +75,8 @@
   </div>
   <div class="cards row clearfix">
     <users class="two-third card"></users>
+    <div class='one-third card dark'>
+      <app-calendar></app-calendar>
+    </div>
   </div>
 </div>
