@@ -37,7 +37,7 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/heroes',
+    redirectTo: '/dashboard',
     pathMatch: 'full'
   },
   { path: '**', component: Page404Component }

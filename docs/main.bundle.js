@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"container my-theme\">\n  <mat-sidenav #sidenav class=\"sidenav\" opened=\"true\" mode=\"slide\">\n    <mat-toolbar>\n      <img src=\"/assets/img/eva-160x80-white.png\" alt=\"Eva\" class=\"logo\">\n    </mat-toolbar>\n    <mat-nav-list>\n      <mat-list-item>\n        <a matLine routerLink=\"/dashboard\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">view_quilt</i> Dashboard\n        </a>\n      </mat-list-item>\n      <mat-list-item>\n        <a matLine routerLink=\"/stats\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">multiline_chart</i>\n          Stats\n        </a>\n      </mat-list-item>\n      <mat-list-item>\n        <a matLine routerLink=\"/dashboard\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">face</i>\n          Users\n        </a>\n      </mat-list-item>\n      <mat-list-item>\n        <a matLine routerLink=\"/dashboard\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">dvr</i>\n          Videos\n        </a>\n      </mat-list-item>\n      <mat-list-item>\n        <a matLine routerLink=\"/dashboard\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">featured_video</i>\n          Streaming\n        </a>\n      </mat-list-item>\n      <mat-list-item>\n        <a matLine routerLink=\"/dashboard\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">event_note</i>\n          Plan Builder\n        </a>\n      </mat-list-item>\n      <mat-list-item>\n        <a matLine routerLink=\"/dashboard\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">settings</i>\n          Settings\n        </a>\n      </mat-list-item>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content class=\"content\">\n    <router-outlet></router-outlet>\n  </mat-sidenav-content>\n\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container class=\"container my-theme\">\n  <mat-sidenav #sidenav class=\"sidenav\" opened=\"true\" mode=\"slide\">\n    <mat-toolbar>\n      <img src=\"assets/img/eva-160x80-white.png\" alt=\"Eva\" class=\"logo\">\n    </mat-toolbar>\n    <mat-nav-list>\n      <mat-list-item>\n        <a matLine routerLink=\"/dashboard\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">view_quilt</i> Dashboard\n        </a>\n      </mat-list-item>\n      <mat-list-item>\n        <a matLine routerLink=\"/stats\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">multiline_chart</i>\n          Stats\n        </a>\n      </mat-list-item>\n      <mat-list-item>\n        <a matLine routerLink=\"/dashboard\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">face</i>\n          Users\n        </a>\n      </mat-list-item>\n      <mat-list-item>\n        <a matLine routerLink=\"/dashboard\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">dvr</i>\n          Videos\n        </a>\n      </mat-list-item>\n      <mat-list-item>\n        <a matLine routerLink=\"/dashboard\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">featured_video</i>\n          Streaming\n        </a>\n      </mat-list-item>\n      <mat-list-item>\n        <a matLine routerLink=\"/dashboard\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">event_note</i>\n          Plan Builder\n        </a>\n      </mat-list-item>\n      <mat-list-item>\n        <a matLine routerLink=\"/dashboard\">\n          <i class=\"material-icons\" style=\"vertical-align: middle;margin-right: 20px;\">settings</i>\n          Settings\n        </a>\n      </mat-list-item>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content class=\"content\">\n    <router-outlet></router-outlet>\n  </mat-sidenav-content>\n\n</mat-sidenav-container>\n"
 
 /***/ }),
 
@@ -135,7 +135,7 @@ var appRoutes = [
     },
     {
         path: '',
-        redirectTo: '/heroes',
+        redirectTo: '/dashboard',
         pathMatch: 'full'
     },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_13__page404_page404_component__["a" /* Page404Component */] }
@@ -555,7 +555,7 @@ var DashboardComponent = (function () {
             .subscribe(function (data) {
             _this.users = Number(data.users_watching);
         });
-        __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_IntervalObservable__["IntervalObservable"].create(5000)
+        __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_IntervalObservable__["IntervalObservable"].create(1000)
             .takeWhile(function () { return _this.alive; }) // only fires when component is alive
             .subscribe(function () {
             _this.httpRequestService.getEmotions('api/videos/1/users')
@@ -899,7 +899,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var HttpRequestService = (function () {
     function HttpRequestService(http) {
         this.http = http;
-        this.DOMAIN = 'http://cphsw-env.7rimk8au7d.us-east-1.elasticbeanstalk.com';
+        this.DOMAIN = '//cphsw-env.7rimk8au7d.us-east-1.elasticbeanstalk.com';
     }
     HttpRequestService.prototype.getEmotions = function (path) {
         return this.http.get(this.DOMAIN + "/" + path);
