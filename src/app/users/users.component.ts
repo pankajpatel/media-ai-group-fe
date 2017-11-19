@@ -7,18 +7,8 @@ import { IntervalObservable } from 'rxjs/observable/IntervalObservable';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
-export class UsersComponent implements OnInit {
-  @Input() count: number;
-  public users: Array<any>;
-  private alive: boolean;
-  constructor(private httpRequestService: HttpRequestService) {
-    this.alive = true;
-    this.count = 0;
-    this.users = [];
-  }
-
-  ngOnInit() {
-    this.users = new Array(Number(this.count));
-  }
+export class UsersComponent {
+  @Input() usersCount: number;
+  @Input() users: Array<any>;
 
 }

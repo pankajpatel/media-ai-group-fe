@@ -3,7 +3,7 @@
 </mat-toolbar>
 <div class="route-content">
   <div class="cards row clearfix">
-    <donught-card text="User(s)|Watching" value="{{users}}" from="10" class="one-third card"></donught-card>
+    <donught-card text="User(s)|Watching" value="{{usersCount}}" from="10" class="one-third card"></donught-card>
     <donught-card text="Users|Drop" value="40" class="one-third card"></donught-card>
     <donught-card text="Users|Not Interested" value="60" class="one-third card"></donught-card>
   </div>
@@ -38,7 +38,7 @@
     </div>
   </div>
   <div class="cards row clearfix">
-    <users class="two-third card" count="{{users}}"></users>
+    <users class="two-third card" [usersCount]="usersCount" [users]="users"></users>
     <div class='one-third card dark'>
       <app-calendar></app-calendar>
     </div>

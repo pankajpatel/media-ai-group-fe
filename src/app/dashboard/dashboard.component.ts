@@ -21,7 +21,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public lineChartOptions: any;
   public graphData: GraphData;
   private alive: boolean;
-  private users: number;
+  private usersCount = 0;
+  private users: Array<any> = [];
   private emotionsStats: Array<any>;
 
   keys(): Array<string> {
@@ -41,7 +42,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   constructor(private httpRequestService: HttpRequestService, private chartDataParsingService: ChartDataParsingService) {
     this.alive = true;
-    this.users = 0;
   }
 
   ngOnInit() {
@@ -124,15 +124,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.httpRequestService.getEmotions('api/videos/2/users')
       .first() // only gets fired once
       .subscribe(data => {
-        this.users = Number(data.users_watching);
-      })
+        this.usersCount = Number(data.users_watching);
+        this.users = Array.from(new Array(this.usersCount), (val, index) => String(index + 1));
+      });
     IntervalObservable.create(1000)
       .takeWhile(() => this.alive) // only fires when component is alive
       .subscribe(() => {
         this.httpRequestService.getEmotions('api/videos/2/users')
           .subscribe(data => {
-            this.users = Number(data.users_watching);
-          })
+            this.usersCount = Number(data.users_watching);
+            this.users = Array.from(new Array(this.usersCount), (val, index) => String(index + 1));
+          });
       });
     /********** */
   }
