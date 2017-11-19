@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       return chartData;
     });
 
-    this.httpRequestService.getEmotions('api/videos/1/emotions/stats')
+    this.httpRequestService.getEmotions('api/videos/2/emotions/stats')
     .first() // only gets fired once
     .subscribe(data => {
       this.emotionsStats = this.emotionsStats.map((emotionStat: ChartData) => {
@@ -66,7 +66,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       });
     });
 
-    this.httpRequestService.getEmotions('api/videos/1/emotions')
+    this.httpRequestService.getEmotions('api/videos/2/emotions')
     .first() // only gets fired once
     .subscribe(data => {
       const chartDataAllEmotions = this.chartDataParsingService.parseEmotionsData(data, this.keys());
@@ -83,7 +83,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     .takeWhile(() => this.alive) // only fires when component is alive
     .subscribe(() => {
       // asking for emotions for chart
-      this.httpRequestService.getEmotions('api/videos/1/emotions').subscribe(data => {
+      this.httpRequestService.getEmotions('api/videos/2/emotions').subscribe(data => {
         const chartDataAllEmotions = this.chartDataParsingService.parseEmotionsData(data, this.keys());
         this.lineChartDatasets = this.keys().map((chartName: string) => {
           const chartData = this.chartDataParsingService.getDefault()[chartName];
@@ -94,7 +94,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       });
 
       // asking for stats and percentages
-      this.httpRequestService.getEmotions('api/videos/1/emotions/stats')
+      this.httpRequestService.getEmotions('api/videos/2/emotions/stats')
       .first() // only gets fired once
       .subscribe(data => {
         this.emotionsStats = this.emotionsStats.map((emotionStat: ChartData) => {
@@ -122,7 +122,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       labels: Array.from(new Array(30), (val, index) => String(index))
     };
     /********** users card and table */
-    this.httpRequestService.getEmotions('api/videos/1/users')
+    this.httpRequestService.getEmotions('api/videos/2/users')
       .first() // only gets fired once
       .subscribe(data => {
         this.users = Number(data.users_watching);
@@ -130,7 +130,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     IntervalObservable.create(1000)
       .takeWhile(() => this.alive) // only fires when component is alive
       .subscribe(() => {
-        this.httpRequestService.getEmotions('api/videos/1/users')
+        this.httpRequestService.getEmotions('api/videos/2/users')
           .subscribe(data => {
             this.users = Number(data.users_watching);
           })

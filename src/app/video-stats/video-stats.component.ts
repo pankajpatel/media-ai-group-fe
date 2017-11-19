@@ -35,7 +35,7 @@ export class VideoStatsComponent implements OnInit, OnDestroy {
       return chartData;
     });
 
-    this.httpRequestService.getEmotions('api/videos/1/emotions')
+    this.httpRequestService.getEmotions('api/videos/2/emotions')
     .first() // only gets fired once
     .subscribe(data => {
       const chartDataAllEmotions = this.chartDataParsingService.parseEmotionsData(data, this.keys());
@@ -51,7 +51,7 @@ export class VideoStatsComponent implements OnInit, OnDestroy {
     IntervalObservable.create(1000)
     .takeWhile(() => this.alive) // only fires when component is alive
     .subscribe(() => {
-      this.httpRequestService.getEmotions('api/videos/1/emotions').subscribe(data => {
+      this.httpRequestService.getEmotions('api/videos/2/emotions').subscribe(data => {
         const chartDataAllEmotions = this.chartDataParsingService.parseEmotionsData(data, this.keys());
         this.lineChartDatasets = this.keys().map((chartName: string) => {
           const chartData = this.chartDataParsingService.getDefault()[chartName];
