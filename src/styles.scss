@@ -13,7 +13,9 @@ body {
 body * {
     box-sizing: border-box;
 }
-
+.logo {
+  width: 75px;
+}
 .container {
     width: 100vw;
     padding-left: 15vw;
