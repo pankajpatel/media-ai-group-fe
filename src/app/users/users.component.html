@@ -8,28 +8,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr >
+    <tr *ngFor="let user of users">
       <!--  *ngFor="#stat of stats" -->
       <td class="blue">Denmark</td>
       <td>Video #1</td>
       <td>Channel #1</td>
       <td class="green">Active</td>
     </tr>
-    <tr >
-      <!--  *ngFor="#stat of stats" -->
-      <td class="blue">Denmark</td>
-      <td>Video #1</td>
-      <td>Channel #1</td>
-      <td class="green">Active</td>
-    </tr>
-    <tr >
-      <!--  *ngFor="#stat of stats" -->
-      <td class="blue">Denmark</td>
-      <td>Video #1</td>
-      <td>Channel #1</td>
-      <td class="green">Active</td>
-    </tr>
-    <tr >
+    <tr *ngIf="users.length == 0">
       <!--  *ngFor="#stat of stats" -->
       <td class="blue">Denmark</td>
       <td>Video #1</td>
