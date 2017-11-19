@@ -61,44 +61,13 @@
     <div class="one-third card dark">
       <p class="center">One</p>
       <p class="center link">Two</p>
-      <div class="emotion">
-        <p>Sad
-          <span class="float-right">40%</span>
+
+      <div class="emotion" *ngFor="let emotionStat of emotionsStats; let i = index">
+        <p>{{emotionStat.label}}
+          <span class="float-right">{{emotionStat.percentage}}</span>
         </p>
         <div class="progress">
-          <div class="fill" style="width:40%;background: rgb(26, 92, 153)"></div>
-        </div>
-      </div>
-      <div class="emotion">
-        <p>Happy
-          <span class="float-right">60%</span>
-        </p>
-        <div class="progress">
-          <div class="fill" style="width:60%;background: rgb(16, 211, 104)"></div>
-        </div>
-      </div>
-      <div class="emotion">
-        <p>Sad
-          <span class="float-right">40%</span>
-        </p>
-        <div class="progress">
-          <div class="fill" style="width:40%;background: rgb(26, 92, 153)"></div>
-        </div>
-      </div>
-      <div class="emotion">
-        <p>Sad
-          <span class="float-right">40%</span>
-        </p>
-        <div class="progress">
-          <div class="fill" style="width:40%;background: rgb(26, 92, 153)"></div>
-        </div>
-      </div>
-      <div class="emotion">
-        <p>Sad
-          <span class="float-right">40%</span>
-        </p>
-        <div class="progress">
-          <div class="fill" style="width:40%;background: rgb(26, 92, 153)"></div>
+          <div class="fill" [ngStyle]="{background: emotionStat.borderColor, width: emotionStat.percentage + '%'}"></div>
         </div>
       </div>
     </div>

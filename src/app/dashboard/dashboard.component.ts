@@ -21,10 +21,23 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public lineChartOptions: any;
   public graphData: GraphData;
   private alive: boolean;
+  private emotionsStats: Array<any>;
+
   keys(): Array<string> {
     const keys = Object.keys(Emotions);
     return keys.slice(keys.length / 2);
   }
+
+  stats(): Array<string> {
+    return [
+      'disgust',
+      'anger',
+      'fear',
+      'joy',
+      'sadness'
+    ];
+  }
+
   constructor(private httpRequestService: HttpRequestService, private chartDataParsingService: ChartDataParsingService) {
     this.alive = true;
   }
@@ -34,6 +47,20 @@ export class DashboardComponent implements OnInit, OnDestroy {
       const chartData = this.chartDataParsingService.getDefault()[chartName];
       chartData.data = [];
       return chartData;
+    });
+
+    this.emotionsStats = this.stats().map((chartName: string) => {
+      const chartData = this.chartDataParsingService.getDefault()[chartName];
+      return chartData;
+    });
+
+    this.httpRequestService.getEmotions('api/videos/1/emotions/stats')
+    .first() // only gets fired once
+    .subscribe(data => {
+      this.emotionsStats = this.emotionsStats.map((emotionStat: ChartData) => {
+        emotionStat.percentage = data[emotionStat.label].toFixed(1);
+        return emotionStat;
+      });
     });
 
     this.httpRequestService.getEmotions('api/videos/1/emotions')
@@ -52,6 +79,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     IntervalObservable.create(1000)
     .takeWhile(() => this.alive) // only fires when component is alive
     .subscribe(() => {
+      // asking for emotions for chart
       this.httpRequestService.getEmotions('api/videos/1/emotions').subscribe(data => {
         const chartDataAllEmotions = this.chartDataParsingService.parseEmotionsData(data, this.keys());
         this.lineChartDatasets = this.keys().map((chartName: string) => {
@@ -60,6 +88,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
           return chartData;
         });
         console.log('this.lineChartDatasets', this.lineChartDatasets);
+      });
+
+      // asking for stats and percentages
+      this.httpRequestService.getEmotions('api/videos/1/emotions/stats')
+      .first() // only gets fired once
+      .subscribe(data => {
+        this.emotionsStats = this.emotionsStats.map((emotionStat: ChartData) => {
+          emotionStat.percentage = data[emotionStat.label].toFixed(1);
+          return emotionStat;
+        });
       });
     });
 

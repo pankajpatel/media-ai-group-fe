@@ -3,6 +3,7 @@ export interface ChartData {
   fill: boolean;
   data: Array<Number>;
   borderColor: string;
+  percentage?: Number;
 }
 
 export interface GraphData {

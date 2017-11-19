@@ -11,61 +11,71 @@ export class ChartDataParsingService {
       label: 'disgust',
       fill: false,
       data: [],
-      borderColor: <string> color('red').toString()
+      borderColor: <string> color('red').toString(),
+      percentage: 0
     },
     anger: {
       label: 'anger',
       fill: false,
       data: [],
-      borderColor: <string> color('blue').toString()
+      borderColor: <string> color('blue').toString(),
+      percentage: 0
     },
     contempt: {
       label: 'contempt',
       fill: false,
       data: [],
-      borderColor: <string> color('green').toString()
+      borderColor: <string> color('green').toString(),
+      percentage: 0
     },
     engagement: {
       label: 'engagement',
       fill: false,
       data: [],
-      borderColor: <string> color('green').toString()
+      borderColor: <string> color('green').toString(),
+      percentage: 0
     },
     fear: {
       label: 'fear',
       fill: false,
       data: [],
-      borderColor: <string> color('black').toString()
+      borderColor: <string> color('black').toString(),
+      percentage: 0
     },
     joy: {
       label: 'joy',
       fill: false,
       data: [],
-      borderColor: <string> color('orange').toString()
+      borderColor: <string> color('orange').toString(),
+      percentage: 0
     },
     sadness: {
       label: 'sadness',
       fill: false,
       data: [],
-      borderColor: <string> color('yellow').toString()
+      borderColor: <string> color('yellow').toString(),
+      percentage: 0
     },
     surprise: {
       label: 'surprise',
       fill: false,
       data: [],
-      borderColor: <string> color('grey').toString()
+      borderColor: <string> color('grey').toString(),
+      percentage: 0
     },
     valence: {
       label: 'valence',
       fill: false,
       data: [],
-      borderColor: <string> color('red').toString()
+      borderColor: <string> color('red').toString(),
+      percentage: 0
     },
     attention: {
       label: 'attention',
       fill: false,
       data: [],
-      borderColor: <string> color('blue').toString()
+      borderColor: <string> color('blue').toString(),
+      percentage: 0
     },
   };
   getDefault() {
