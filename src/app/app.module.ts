@@ -24,6 +24,7 @@ import { CircleProgressComponent } from './circle-progress/circle-progress.compo
 import { UsersComponent } from './users/users.component';
 import { CalendarModule } from 'angular-calendar';
 import { CalendarComponent } from './calendar/calendar.component';
+import { DonughtCardComponent } from './donught-card/donught-card.component';
 
 const appRoutes: Routes = [
 
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     ChartComponent,
     CircleProgressComponent,
     UsersComponent,
-    CalendarComponent
+    CalendarComponent,
+    DonughtCardComponent
   ],
   imports: [
     NoopAnimationsModule,

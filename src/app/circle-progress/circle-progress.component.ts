@@ -23,7 +23,7 @@ export class CircleProgressComponent implements OnInit {
     this.value = Number(this.value);
     this.data = this.clockWise ? [this.value, (100 - this.value)] : [(100 - this.value), this.value];
     // this.data = [this.value, 100];
-    this.labels = ['dsf', 'sjjj'];
+    this.labels = this.data;
     this.options = {
       legend: {
         display: false

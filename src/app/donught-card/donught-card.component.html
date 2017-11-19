@@ -1,0 +1,12 @@
+<div class="image">
+  <circle-progress value="{{value}}" suffix="%"></circle-progress>
+</div>
+<div class="context">
+  <div class="count">{{value}}</div>
+  <div class="text">
+    <div *ngFor="let t of text">
+      {{t}}
+    </div>
+    <small>{{secondary}}</small>
+  </div>
+</div>
