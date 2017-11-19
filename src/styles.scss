@@ -13,9 +13,11 @@ body {
 body * {
     box-sizing: border-box;
 }
+
 .logo {
-  width: 75px;
+    width: 75px;
 }
+
 .container {
     width: 100vw;
     padding-left: 15vw;
@@ -209,9 +211,62 @@ users {
 .green {
     color: #bfcb3d;
 }
+
 .blue {
     color: #5caee1;
 }
+
 .grey {
     color: #ccc;
+}
+
+.cal-month-view {
+    .cal-header {
+        .cal-cell:hover {
+            background: transparent
+        }
+    }
+    .cal-cell-row.cal-header:hover {
+        background: transparent
+    }
+    .cal-days {
+        border: 0;
+    }
+    .cal-day-cell:not(:last-child) {
+        border: 0;
+    }
+    .cal-day-cell {
+        min-height: 40px;
+        &.cal-today .cal-day-number {
+            font-size: 1.2em;
+        }
+        &.cal-weekend .cal-day-number {
+            color: #aaa;
+        }
+    }
+    .cal-day-cell.cal-today {
+      background: #eee;
+      border-radius: 3px;
+      .cal-day-number {
+        color: #222;
+      }
+    }
+    .cal-cell-top {
+        min-height: 40px;
+        &:hover {
+            background: transparent;
+        }
+    }
+    .cal-days {
+        .cal-cell-row {
+            background: transparent;
+            border: 0;
+            &:hover {
+                background: transparent;
+            }
+            .cal-day-cell:hover {
+                background: transparent;
+            }
+        }
+    }
 }

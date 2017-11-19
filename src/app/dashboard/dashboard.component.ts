@@ -127,7 +127,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       .subscribe(data => {
         this.users = Number(data.users_watching);
       })
-    IntervalObservable.create(1000)
+    IntervalObservable.create(5000)
       .takeWhile(() => this.alive) // only fires when component is alive
       .subscribe(() => {
         this.httpRequestService.getEmotions('api/videos/1/users')
