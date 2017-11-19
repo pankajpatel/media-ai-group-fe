@@ -35,8 +35,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       'attention',
       'joy',
       'surprise',
-      'anger',
-      'sadness'
+      'anger'
     ];
   }
 
