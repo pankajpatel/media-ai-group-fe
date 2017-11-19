@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "b": "ng build  --target=production --environment=prod --base-href /media-ai-group-fe/ --output-path ./public --deploy-url https://hajjem-ayoub.github.io/media-ai-group-fe/"
   },
   "private": true,
   "dependencies": {
