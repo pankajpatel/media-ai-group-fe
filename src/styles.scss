@@ -69,7 +69,7 @@ body * {
 }
 
 .cards {
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 }
 
 .one-fourth {
@@ -114,6 +114,7 @@ body * {
 
 .card {
     overflow: hidden;
+    margin-bottom: 20px;
     .image {
         width: 50px;
         height: 50px;

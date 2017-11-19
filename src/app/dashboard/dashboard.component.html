@@ -8,39 +8,42 @@
     <donught-card text="Users|Not Interested" value="60" class="one-third card"></donught-card>
   </div>
   <div class="cards row clearfix">
-    <div class="two-third card">
-      <p class="center">Live engagement preview</p>
-      <p class="center link">Average time of update: every 1 sec</p>
 
-      <app-chart
-        [lineChartDatasets]="lineChartDatasets"
-        [lineChartColors]="lineChartColors"
-        [lineChartOptions]="lineChartOptions"
-        [graphData]="graphData">
-      </app-chart>
+    <div class="two-third">
+      <div class=" card">
+        <p class="center">Live engagement preview</p>
+        <p class="center link">Average time of update: every 1 sec</p>
+
+        <app-chart
+          [lineChartDatasets]="lineChartDatasets"
+          [lineChartColors]="lineChartColors"
+          [lineChartOptions]="lineChartOptions"
+          [graphData]="graphData">
+        </app-chart>
 
 
 
+      </div>
+      <users class="card" [usersCount]="usersCount" [users]="users"></users>
     </div>
-    <div class="one-third card dark">
-      <p class="center">User emotion tracking</p>
-      <p class="center">most represented emotions</p>
-      <p class="center link">Live preview for user emotions</p>
+    <div class="one-third">
+      <div class="card dark">
+        <p class="center">User emotion tracking</p>
+        <p class="center">most represented emotions</p>
+        <p class="center link">Live preview for user emotions</p>
 
-      <div class="emotion" *ngFor="let emotionStat of emotionsStats; let i = index">
-        <p>{{emotionStat.label}}
-          <span class="float-right">{{emotionStat.percentage}}%</span>
-        </p>
-        <div class="progress">
-          <div class="fill" [ngStyle]="{background: emotionStat.borderColor, width: emotionStat.percentage + '%'}"></div>
+        <div class="emotion" *ngFor="let emotionStat of emotionsStats; let i = index">
+          <p>{{emotionStat.label}}
+            <span class="float-right">{{emotionStat.percentage}}%</span>
+          </p>
+          <div class="progress">
+            <div class="fill" [ngStyle]="{background: emotionStat.borderColor, width: emotionStat.percentage + '%'}"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="cards row clearfix">
-    <users class="two-third card" [usersCount]="usersCount" [users]="users"></users>
-    <div class='one-third card dark'>
-      <app-calendar></app-calendar>
+      <div class='card dark'>
+        <app-calendar></app-calendar>
+      </div>
     </div>
   </div>
 </div>
