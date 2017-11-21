@@ -28,7 +28,7 @@ import { UsersComponent } from './users/users.component';
 import { CalendarModule } from 'angular-calendar';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DonughtCardComponent } from './donught-card/donught-card.component';
-import { TrackComponent } from './track/track.component';
+// import { TrackComponent } from './track/track.component';
 
 const appRoutes: Routes = [
 
@@ -58,7 +58,7 @@ const appRoutes: Routes = [
     UsersComponent,
     CalendarComponent,
     DonughtCardComponent,
-    TrackComponent
+    // TrackComponent
   ],
   imports: [
     NoopAnimationsModule,
