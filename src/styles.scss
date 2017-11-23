@@ -246,11 +246,11 @@ users {
         }
     }
     .cal-day-cell.cal-today {
-      background: #eee;
-      border-radius: 3px;
-      .cal-day-number {
-        color: #222;
-      }
+        background: #eee;
+        border-radius: 3px;
+        .cal-day-number {
+            color: #222;
+        }
     }
     .cal-cell-top {
         min-height: 40px;
@@ -270,4 +270,9 @@ users {
             }
         }
     }
+}
+
+.max-width-1024 {
+  max-width: 1024px;
+  margin: 0 auto;
 }

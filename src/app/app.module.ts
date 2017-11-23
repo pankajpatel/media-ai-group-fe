@@ -26,6 +26,8 @@ import { UsersComponent } from './users/users.component';
 import { CalendarModule } from 'angular-calendar';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DonughtCardComponent } from './donught-card/donught-card.component';
+import { TrackComponent } from './track/track.component';
+import { BrowseComponent } from './browse/browse.component';
 
 const appRoutes: Routes = [
 
@@ -34,6 +36,14 @@ const appRoutes: Routes = [
     path: 'stats',
     component: VideoStatsComponent,
     data: { title: 'Heroes List' }
+  },
+  {
+    path: 'browse/:id',
+    component: TrackComponent,
+  },
+  {
+    path: 'browse',
+    component: BrowseComponent,
   },
   {
     path: '',
@@ -54,7 +64,9 @@ const appRoutes: Routes = [
     CircleProgressComponent,
     UsersComponent,
     CalendarComponent,
-    DonughtCardComponent
+    DonughtCardComponent,
+    TrackComponent,
+    BrowseComponent
   ],
   imports: [
     NoopAnimationsModule,

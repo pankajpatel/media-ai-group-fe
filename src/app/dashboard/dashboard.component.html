@@ -13,16 +13,12 @@
       <div class=" card">
         <p class="center">Live engagement preview</p>
         <p class="center link">Average time of update: every 1 sec</p>
-
         <app-chart
           [lineChartDatasets]="lineChartDatasets"
           [lineChartColors]="lineChartColors"
           [lineChartOptions]="lineChartOptions"
           [graphData]="graphData">
         </app-chart>
-
-
-
       </div>
       <users class="card" [usersCount]="usersCount" [users]="users"></users>
     </div>
